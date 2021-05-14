@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Arun | Profile</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400;500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./css/main.css">
+	<!-- development version, includes helpful console warnings -->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body @hashchange="hashChange($event)">
+	<div id="app" class="app">
+		<aside>
+			<ul>
+				<li v-for="item in topics">
+					<a :class="`${current == toLink(item) ? 'hash-active' : ''}`" :href="`#${toLink(item)}`">{{toTitle(item)}}</a>
+				</li>
+			</ul>
+		</aside>
+		<main class="container">
+			<article>
+				<section v-for="(content, i) in contents">
+					<h1 class="title" :id="toLink(topics[i])">
+						{{toTitle(topics[i])}}
+					</h1>
+					<div class="text">
+						{{ content.text }}
+					</div>
+					<ul class="list">
+						<li v-for="item in content.list">
+							{{ item }}
+						</li>
+					</ul>
+					<table v-if="!!content.table.length">
+						<tbody>
+							<tr v-for="item in content.table">
+								<td>{{ item[0] }}</td>
+								<td>{{ item[1] }}</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+			</article>
+		</main>
+	</div>
+	<script defer src="./js/main.js"></script>
+</body>
+
+</html>
+
+

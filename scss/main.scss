@@ -1,0 +1,108 @@
+@import "./mixins";
+
+html, body {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    background: rgb(243, 243, 243);
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+ul {
+    padding-left: 5px;
+    li {
+        list-style: none;
+    }
+}
+
+a {
+    font-weight: 600;
+    display: inline-block;
+    color: grey;
+    text-decoration: none;
+    transition: .3s;
+    &:hover {
+        color: rgb(0, 0, 0);
+    }
+}
+
+h1.title {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 35px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+    max-width: 100%;
+    margin: 15px 0px;
+}
+
+section {
+    // min-height: 50vh;
+    padding: 10px;
+    margin-bottom: 30px;
+    .text {
+        font-size: 200;
+        font-size: 20px;
+        color: grey;
+    }
+    .list {
+        li {
+            padding: 8px 0px;
+            list-style: circle;
+            color: grey;
+        }
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        position: relative;
+        td {
+            padding: 10px;
+            border: 1px solid grey;
+        }
+    }
+}
+
+.app {
+    aside {
+        @include lg() {
+            float: left;
+            clear: both;
+            position: fixed;
+            top: 20px;
+            left: 0;
+            max-width: 200px;
+            min-width: 200px;
+            padding: 10px 20px 10px 20px;
+            border-right: 2px solid rgba(3, 3, 3, 0.075);
+            font-size: 12px;
+            background: rgba(255, 255, 255, 0.657);
+            max-height: calc(100vh - 20px);
+            overflow: hidden;
+            z-index: 1;
+            ul {
+                max-width: 200px;
+            }
+            a {
+                line-height: 24px;
+                &.hash-active {
+                    padding-left: 5px;
+                    color: rgb(0, 0, 0);
+                }
+            }
+        }
+    }
+    .container {
+        z-index: 2;
+        position: relative;
+        margin: 20px auto;
+        background: #fff;
+        min-height: 300vh;
+        max-width: 700px;
+        border-radius: 8px;
+        box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        box-sizing: border-box;
+        padding-bottom: 100vh;
+    }
+}

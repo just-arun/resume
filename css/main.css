@@ -1,0 +1,85 @@
+html, body {
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+  background: #f3f3f3;
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth; }
+
+ul {
+  padding-left: 5px; }
+  ul li {
+    list-style: none; }
+
+a {
+  font-weight: 600;
+  display: inline-block;
+  color: grey;
+  text-decoration: none;
+  transition: .3s; }
+  a:hover {
+    color: black; }
+
+h1.title {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 35px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+  max-width: 100%;
+  margin: 15px 0px; }
+
+section {
+  padding: 10px;
+  margin-bottom: 30px; }
+  section .text {
+    font-size: 200;
+    font-size: 20px;
+    color: grey; }
+  section .list li {
+    padding: 8px 0px;
+    list-style: circle;
+    color: grey; }
+  section table {
+    border-collapse: collapse;
+    width: 100%;
+    position: relative; }
+    section table td {
+      padding: 10px;
+      border: 1px solid grey; }
+
+@media screen and (min-width: 900px) {
+  .app aside {
+    float: left;
+    clear: both;
+    position: fixed;
+    top: 20px;
+    left: 0;
+    max-width: 200px;
+    min-width: 200px;
+    padding: 10px 20px 10px 20px;
+    border-right: 2px solid rgba(3, 3, 3, 0.075);
+    font-size: 12px;
+    background: rgba(255, 255, 255, 0.657);
+    max-height: calc(100vh - 20px);
+    overflow: hidden;
+    z-index: 1; }
+    .app aside ul {
+      max-width: 200px; }
+    .app aside a {
+      line-height: 24px; }
+      .app aside a.hash-active {
+        padding-left: 5px;
+        color: black; } }
+
+.app .container {
+  z-index: 2;
+  position: relative;
+  margin: 20px auto;
+  background: #fff;
+  min-height: 300vh;
+  max-width: 700px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+  padding-bottom: 100vh; }
